@@ -6,8 +6,12 @@
 
 {% block body %}
 
-    <ul>
-        {{ content }}
-    </ul>
+    {{ content }}
+
+    <form action="{{ name }}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Edit Page">
+    </form>
+
 
 {% endblock %}
